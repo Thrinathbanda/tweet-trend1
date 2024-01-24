@@ -1,15 +1,16 @@
 pipeline {
-    agent { 
-      node {
-          label 'maven'
-      }
+    agent {
+        node {
+            label 'maven'
+        }
     }
 
     stages {
-        stage('Hello') {
+        stage("build") {
             steps {
-                echo 'Hello World'
+                sh 'mvn clean deploy'
             }
         }
+
     }
 }
