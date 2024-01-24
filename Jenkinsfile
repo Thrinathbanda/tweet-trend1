@@ -1,18 +1,15 @@
 pipeline {
-    agent {
-        node {
-            label 'maven'
-        }
+    agent { 
+      node {
+          label 'maven'
+      }
     }
-    // environment {
-    //     PATH = /opt/apache-maven-3.8.8/bin:$PATH
-    }
+
     stages {
-        stage("build") {
+        stage('Hello') {
             steps {
-                sh 'mvn clean deploy'
+                echo 'Hello World'
             }
         }
-
     }
 }
